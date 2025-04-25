@@ -1,0 +1,20 @@
+{
+  "name": "bubbleplot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module", 
+  "directories": {
+    "test": "mocha"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.1.0"
+  }
+}
