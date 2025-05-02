@@ -2,7 +2,7 @@
   "name": "bubbleplot",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module", 
+  "type": "module",
   "directories": {
     "test": "mocha"
   },
@@ -16,5 +16,8 @@
   "devDependencies": {
     "chai": "^5.1.2",
     "mocha": "^11.1.0"
+  },
+  "dependencies": {
+    "typescript": "^5.8.3"
   }
 }
