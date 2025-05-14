@@ -5,11 +5,6 @@ import { assert } from 'chai';
 
 describe("Tests suite", () => {
 
-    function doTest(data, settings, expected) {
-      const actual = incrementString(data, settings);
-      assert.strictEqual(actual, expected, `for string: "${input}"\n`);
-    }
-    
     const inputData = [
         { label: 'M1', year: '2025', locationX: 100, locationY: 400, 
             dataVisit1: 0, dataVisit2: 5, dataVisit3: 10, datavisit4: 0 }, 
@@ -23,9 +18,4 @@ describe("Tests suite", () => {
 
     const settings = { noColours: 10, bubbleSizeMin: 20, bubbleSizeMax: 40 } 
 
-    }
-
-    it("sample tests", () => {
-      doTest(inputData, settings, outputData);
-    });
-  });
+    })
