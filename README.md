@@ -19,10 +19,7 @@ docker exec -it <container_name_or_id> sh
 
 ## Postgres container
 
-After pulling: Run a PostgreSQL container
-If you want to quickly spin up a container with it:
-
-
+Run a PostgreSQL container
 
 ```
 docker run -d --name pg-bubble-plot --network bubble-plot --network-alias psql -v bubble-plot-psql-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD=secret -e POSTGRES_USER=root -e POSTGRES_DB=bubbleplot postgres:15
@@ -42,16 +39,16 @@ Runs the container in the background (-d)
 
 Set up a PostgreSQL container with a persistent volume.
 
-Start another container (e.g., a Python app, Node.js, etc.).
+Start another container 
 
 Connect the second container to the PostgreSQL container using Docker networking.
 
-✅ Step 1: Create a Docker network
+ Create a Docker network
 This allows both containers to communicate by name.
 
 
 docker network create my-network
-✅ Step 2: Run PostgreSQL with a volume and on the same network
+Run PostgreSQL with a volume and on the same network
 
 docker run -d \
   --name my-postgres \
@@ -67,10 +64,10 @@ Explanation:
 
 -v pgdata:/var/lib/postgresql/data: persistent volume
 
-You can use my-postgres as the hostname to connect from other containers.
+use my-postgres as the hostname to connect from other containers.
 
-✅ Step 3: Run another container and connect to Postgres
-Here’s an example using a simple PostgreSQL client (like postgres image itself):
+Run another container and connect to Postgres
+
 
 bash
 Copy
@@ -78,10 +75,7 @@ Edit
 docker run -it --rm \
   --network my-network \
   postgres psql -h my-postgres -U myuser -d mydatabase
-It’ll prompt for the password (mysecretpassword) and connect.
 
-✅ Example with your own app (e.g., Node, Python)
-If you have a Node app:
 
 bash
 Copy
@@ -102,7 +96,6 @@ const client = new Client({
   password: 'mysecretpassword',
   database: 'mydatabase',
 });
-✅ View volumes
 bash
 Copy
 Edit
